@@ -11,12 +11,8 @@
 	.type	main, @function
 main:
 .LFB0: #Abrimos el archivo, declaramos un entero
-	.cfi_startproc
 	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
 	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
 	subq	$80, %rsp
 	movl	$.LC0, %esi
 	movl	$.LC1, %edi
@@ -97,7 +93,5 @@ main:
 	call	fclose
 	movl	$0, %eax
 	leave
-	.cfi_def_cfa 7, 8
 	ret
-	.cfi_endproc
 
